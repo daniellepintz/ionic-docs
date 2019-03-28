@@ -9,7 +9,7 @@ contributors:
 
 # Angular Navigation
 
-This guide covers how routing works in and app built with Ionic and Angular.
+This guide covers how routing works in an app built with Ionic and Angular.
 
 
 The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
