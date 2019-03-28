@@ -29,7 +29,7 @@ Since unit tests exercise the code in isolation, they are fast, robust, and allo
 
 ### Using Mocks
 
-Unit tests exercise a code module in isolation. To facilitate this, mock objects (which Jasmine calls "spies") are used in place of dependencies. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
+Unit tests exercise a code module in isolation. To facilitate this, we recommend using Jasmine (https://jasmine.github.io/). Jasmine allows you to create mock objects (which Jasmine calls "spies") to be used in place of dependencies. When a mock object is used, the test can control the values returned by calls to that dependency, making the current test independent of changes made to the dependency. This also makes the test setup easier, allowing the test to only be concerned with the code within the module under test.
 
 Using mocks also allows the test to query the mock to determine if it was called and how it was called via the `toHaveBeenCalled*` set of functions. Tests should be as specific as possible with these functions, favoring calls to `toHaveBeenCalledTimes` over calls to `toHaveBeenCalled` when testing that a method has been called. That is `expect(mock.foo).toHaveBeenCalledTimes(1)` is better than `expect(mock.foo).toHaveBeenCalled()`. The opposite advice should be followed when testing that something has not been called (`expect(mock.foo).not.toHaveBeenCalled()`).
 
@@ -37,7 +37,7 @@ There are two common ways to create mock objects in Jasmine. Mock objects can be
 
 #### Using `jasmine.createSpy` and `jasmine.createSpyObj`
 
-`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. This disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
+`jasmine.createSpyObj` creates a full mock object from scratch with a set of mock methods defined on creation. This is useful in that it is very simple. Nothing needs to be constructed or injected into the test. The disadvantage of using this function is that it allows the creation of objects that may not match the real objects.
 
 `jasmine.createSpy` is similar but it creates a stand-alone mock function.
 
